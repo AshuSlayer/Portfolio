@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <title>Ashutosh Bhattarai</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff; /* White background */
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Intro Animation */
+        .intro {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .circle {
+            position: absolute;
+            border: 8px solid #c2d4df; /* Matte light soft color */
+            border-radius: 50%;
+            animation: expandWobble 4s ease-in-out forwards;
+            transform-origin: center;
+            opacity: 1;
+        }
+
+        .circle:first-child {
+            width: 100px;
+            height: 100px;
+            animation-delay: 0s; /* Immediate start */
+        }
+
+        .circle:last-child {
+            width: 80px;
+            height: 80px;
+            animation-delay: 0.5s; /* Delayed start for the second circle */
+        }
+
+        @keyframes expandWobble {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            25% {
+                transform: scale(10) rotate(3deg); /* Slight wobble */
+                opacity: 0.9;
+            }
+            50% {
+                transform: scale(25) rotate(-3deg); /* Wobble in the opposite direction */
+                opacity: 0.7;
+            }
+            75% {
+                transform: scale(40) rotate(2deg); /* Subtle wobble back */
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(55) rotate(0deg); /* Fully expanded, return to no rotation */
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="intro">
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+
+    <script>
+        // Redirect to index.html after the animation is done
+        setTimeout(() => {
+            window.location.href = 'home.html';
+        }, 2000); // Redirect after 2 seconds (match with the animation duration)
+    </script>
+</body>
+</html>
